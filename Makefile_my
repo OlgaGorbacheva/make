@@ -1,0 +1,14 @@
+cut: cut.h cut.o Sort.o print.o
+	gcc -std=c99 -o cut cut.o Sort.o print.o
+
+cut.o: cut.c cut.h
+	gcc -std=c99 -c -o cut.o  cut.c
+
+Sort.o: Sort.c 
+	gcc -std=c99 -c -o Sort.o  Sort.c
+
+print.o: print.c
+        gcc -std=c99 -c -o print.o  print.c
+
+clean:
+	rm -rf *.o
